@@ -1,6 +1,6 @@
-# How FFP works
+# How FPPBox works
 
-FFP is a small device with a fingerprint sensor. Touch it, and it types your
+FPPBox (Fingerprint Portable Box) is a small device with a fingerprint sensor. Touch it, and it types your
 password for you — without the password ever being stored on the device.
 
 ## The big picture
@@ -72,7 +72,7 @@ mode — a pairing key installed). What happens on Mac B depends on the mode:
 - **Remote mode (secret stored in the app's keychain):** the device only
   holds the profile reference and the pairing key. On a fingerprint match it
   sends a `SECRET_REQUEST` over USB and waits for the app to reply. On Mac B:
-  - If the FFP app is not running (or has a different pairing key), nobody
+  - If the FPPBox app is not running (or has a different pairing key), nobody
     answers, the request times out, and nothing is typed.
   - If Mac B runs the app provisioned with the **same pairing key**, the flow
     works normally. Trust follows the pairing key, not the machine.
@@ -168,7 +168,7 @@ build). Windows and Linux are not supported yet.
 
 ## Disclaimer
 
-FFP is provided "as is", without warranty of any kind. No software or
+FPPBox is provided "as is", without warranty of any kind. No software or
 hardware can guarantee absolute security.
 
 - **Not bulletproof.** A determined attacker with physical access, malware on
