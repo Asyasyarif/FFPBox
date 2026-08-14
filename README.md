@@ -15,6 +15,9 @@ password for you — without the password ever being stored on the device.
 4. The app sends it encrypted over USB; the device decrypts, types it, and
    wipes it from memory.
 
+## Buy The Sensor Module
+Soon
+
 ## The flow, step by step
 
 ```mermaid
