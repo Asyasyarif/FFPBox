@@ -56,7 +56,9 @@ sequenceDiagram
 
 ## FAQ
 
-### I set the device up on Mac A. What happens if I plug it into Mac B?
+<details>
+<summary>I set the device up on Mac A. What happens if I plug it into Mac B?</summary>
+
 
 The device is **not bound to any specific Mac** — it never stores a hostname,
 machine ID, or anything that ties it to one computer. "Set up" only means
@@ -77,7 +79,11 @@ mode — a pairing key installed). What happens on Mac B depends on the mode:
   - If Mac B runs the app provisioned with the **same pairing key**, the flow
     works normally. Trust follows the pairing key, not the machine.
 
-### Can I use the device on two Macs?
+</details>
+
+<details>
+<summary>Can I use the device on two Macs?</summary>
+
 
 - **Local mode:** yes — the credential lives on the device, so any Mac works
   out of the box.
@@ -86,13 +92,21 @@ mode — a pairing key installed). What happens on Mac B depends on the mode:
   too, but treat the key as a credential: anyone holding it can request the
   secrets.
 
-### What should I watch out for?
+</details>
+
+<details>
+<summary>What should I watch out for?</summary>
+
 
 - The device types whatever credential is matched — it does not check which
   Mac it is plugged into. Enroll only trusted fingers, and treat a device
   with a stored local credential like the credential itself.
 
-### Is anything sent over the internet? Is there a server?
+</details>
+
+<details>
+<summary>Is anything sent over the internet? Is there a server?</summary>
+
 
 No. Everything is **fully offline** and runs on your own hardware:
 
@@ -104,7 +118,11 @@ No. Everything is **fully offline** and runs on your own hardware:
 - All cryptographic checks (HMAC verification, decryption) happen locally on
   the device and in the app on your Mac.
 
-### Where is my auth info stored?
+</details>
+
+<details>
+<summary>Where is my auth info stored?</summary>
+
 
 - **Fingerprint:** stored only on the device, inside the fingerprint sensor
   itself. It never leaves the device — the sensor only reports
@@ -113,14 +131,22 @@ No. Everything is **fully offline** and runs on your own hardware:
   (remote mode), never on the device and never on any server. In local mode
   the credential is stored on the device (flash-encrypted) instead.
 
-### Is anything sent anywhere when I touch the sensor?
+</details>
+
+<details>
+<summary>Is anything sent anywhere when I touch the sensor?</summary>
+
 
 No. Touching the sensor triggers a local fingerprint match, then — if it
 matches — a USB request to the app on the same Mac. Nothing leaves your
 machine except keystrokes on the local USB keyboard, and those stay on the
 machine you are plugged into.
 
-### How many fingers and passwords can I set up?
+</details>
+
+<details>
+<summary>How many fingers and passwords can I set up?</summary>
+
 
 Up to **3 fingerprints** (the sensor's capacity). Each enrolled finger
 occupies one profile slot. In remote mode, the app stores **one password per
@@ -128,7 +154,11 @@ device** (keyed by the device's pairing key) — not one per finger. Every
 enrolled finger requests that same password, so enrolling more fingers does
 not add more passwords.
 
-### What does the app need on the Mac?
+</details>
+
+<details>
+<summary>What does the app need on the Mac?</summary>
+
 
 - **App must be running.** In remote mode the device can't type anything
   until the app answers the secret request. If the app isn't running, a
@@ -139,13 +169,21 @@ not add more passwords.
 - **Password in Keychain.** The secret is stored in the macOS Keychain, not
   in a file on disk.
 
-### Can I use it on the login screen?
+</details>
+
+<details>
+<summary>Can I use it on the login screen?</summary>
+
 
 Not yet. In remote mode the app must be running to answer the request, and
 at the login screen no app session exists yet (a LaunchAgent that runs the
 app pre-login is planned).
 
-### I lost the device. What happens?
+</details>
+
+<details>
+<summary>I lost the device. What happens?</summary>
+
 
 In remote mode, the device holds no secrets — only the pairing key and
 fingerprint templates. A stolen device without the app (and its key) cannot
@@ -155,7 +193,11 @@ get the password out. Still, treat a lost device as compromised:
 - If you recover the device, use the app's **Reset** option to wipe the old
   fingerprints and pairing key, then set it up again from scratch.
 
-### Why is my finger sometimes not read, or hard to read?
+</details>
+
+<details>
+<summary>Why is my finger sometimes not read, or hard to read?</summary>
+
 
 The sensor is small and compares your live finger against the enrolled
 template — if the live read is too different, it reports “no match”. Most
@@ -180,16 +222,26 @@ If a finger that used to work stops working, the template did not change —
 the live read did (dry skin, cut, angle). Re-enroll the finger and the
 problem usually goes away.
 
-### Anything to remember before touching the sensor?
+</details>
+
+<details>
+<summary>Anything to remember before touching the sensor?</summary>
+
 
 Yes: the device **types into whatever field is focused**. Make sure the
 password field is focused (and the app sees it as secure) before touching
 — otherwise the password lands in the wrong place.
 
-### Which operating systems are supported?
+</details>
+
+<details>
+<summary>Which operating systems are supported?</summary>
+
 
 Currently **macOS only** — Intel, Apple Silicon, and universal (both in one
 build). Windows and Linux are not supported yet.
+
+</details>
 
 ## Disclaimer
 
