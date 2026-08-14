@@ -1,5 +1,7 @@
 # How FPPBox works
 
+![FPPBox logo](fppbox_logo.png)
+
 FPPBox (Fingerprint Portable Box) is a small device with a fingerprint sensor. Touch it, and it types your
 password for you — without the password ever being stored on the device.
 
