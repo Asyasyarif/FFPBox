@@ -155,6 +155,31 @@ get the password out. Still, treat a lost device as compromised:
 - If you recover the device, use the app's **Reset** option to wipe the old
   fingerprints and pairing key, then set it up again from scratch.
 
+### Why is my finger sometimes not read, or hard to read?
+
+The sensor is small and compares your live finger against the enrolled
+template — if the live read is too different, it reports “no match”. Most
+causes are on the finger, not the device:
+
+- **Dry, dirty, oily, or wet finger.** Wipe the sensor and your fingertip
+  before touching. Dry fingers are the most common cause of weak reads.
+- **Bad placement.** Cover the whole sensor window flat with the pad of your
+  finger. Touch with the same finger, same angle, and same orientation you
+  used during enrollment.
+- **Too quick or sliding.** Keep the finger still on the sensor until the
+  device types (or the LED gives up) — sliding or lifting too early aborts
+  the read.
+- **Weak enrollment.** If the enrolled template was captured in a hurry (or
+  from the same dry finger), matches will be unreliable. Enroll again,
+  slowly, and — if the sensor supports it — enroll the same finger more than
+  once.
+- **Wrong finger.** The device only accepts fingerprints it has been
+  enrolled with. Enrolled fingers are the only ones that can trigger it.
+
+If a finger that used to work stops working, the template did not change —
+the live read did (dry skin, cut, angle). Re-enroll the finger and the
+problem usually goes away.
+
 ### Anything to remember before touching the sensor?
 
 Yes: the device **types into whatever field is focused**. Make sure the
